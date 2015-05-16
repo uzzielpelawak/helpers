@@ -89,9 +89,11 @@ class LittleBigHelper
 	{
 		if (extension_loaded('intl') === true )
 		{
-			$options = 'Any-Latin; NFKD; [:Punctuation:] Remove; [^\u0000-\u007E] Remove';
+			$options = 'Any-Latin; NFKD';
 			$string  = transliterator_transliterate($options, $string);
-			$string  = preg_replace('/[-=\s]+/', $replacement, $string);
+
+			$string = preg_replace('/[^a-zA-Z0-9=\s—–-]+/u', '', $string);
+			$string = preg_replace('/[=\s—–-]+/u', $replacement, $string);
 		}
 		else
 		{
