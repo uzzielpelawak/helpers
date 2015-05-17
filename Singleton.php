@@ -61,4 +61,20 @@ class Singleton
 		return isset($instance->dataArray[$from]) ? $instance->dataArray[$from] : null;
 	}
 
+	/**
+	 * setData
+	 *
+	 * @param string|array $keys
+	 */
+	public static function clearData($keys)
+	{
+		$keys = (array) $keys;
+
+		$instance = self::getInstance();
+
+		foreach ($keys as $key)
+		{
+			unset($instance->dataArray[$key]);
+		}
+	}
 }
