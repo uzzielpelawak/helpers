@@ -52,13 +52,15 @@ class Singleton
 	 * getData
 	 *
 	 * @param string $from
+	 * @param bool   $emptyReturn
+	 *
 	 * @return mixed
 	 */
-	public static function getData($from)
+	public static function getData($from, $emptyReturn = null)
 	{
 		$instance = self::getInstance();
 
-		return isset($instance->dataArray[$from]) ? $instance->dataArray[$from] : null;
+		return array_key_exists($from, $instance->dataArray) ? $instance->dataArray[$from] : $emptyReturn;
 	}
 
 	/**
