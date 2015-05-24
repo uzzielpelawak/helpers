@@ -56,7 +56,7 @@ class Singleton
 	 *
 	 * @return mixed
 	 */
-	public static function getData($from, $emptyReturn = null)
+	public static function getData($from, $emptyReturn = false)
 	{
 		$instance = self::getInstance();
 
