@@ -79,4 +79,56 @@ class Singleton
 			unset($instance->dataArray[$key]);
 		}
 	}
+
+
+	// ================= Improved version =================
+
+
+	/**
+	 * @var array
+	 */
+	protected static $data = [];
+
+	/**
+	 * @param string $key
+	 * @param mixed $value
+	 */
+	public static function set($key, $value)
+	{
+		static::$data[$key] = $value;
+	}
+
+	/**
+	 * @param string $key
+	 * @param bool   $emptyResponse
+	 *
+	 * @return mixed
+	 */
+	public static function get($key, $emptyResponse = false)
+	{
+		return array_key_exists($key, static::$data) ? static::$data[$key] : $emptyResponse;
+	}
+
+	/**
+	 * @param string $key
+	 * @param \Closure   $value
+	 *
+	 * @return mixed
+	 */
+	public static function getAndStore($key, \Closure $value)
+	{
+		if ( array_key_exists($key, static::$data) )
+		{
+			return static::$data[$key];
+		}
+		else
+		{
+			$value = call_user_func($value);
+
+			static::set($key, $value);
+
+			return $value;
+		}
+	}
+
 }
