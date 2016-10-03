@@ -109,15 +109,13 @@ class LittleBigHelper
 	/**
 	 * Find real user IP
 	 *
-	 * @return string|null
+	 * @return string
 	 */
 	public static function getRealIp()
 	{
-		$ip = null;
-
 		if (php_sapi_name() == 'cli')
 		{
-			return $ip;
+			return '127.0.0.1';
 		}
 		else
 		{
