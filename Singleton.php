@@ -1,5 +1,5 @@
 <?php
-namespace webvimark\helpers;
+namespace uzzielpelawak\helpers;
 
 /**
  * Class Singleton
@@ -10,7 +10,7 @@ namespace webvimark\helpers;
  * 	$someObject = Singleton::getData('someKey');
  * </example>
  *
- * @package webvimark\helpers
+ * @package uzzielpelawak\helpers
  */
 class Singleton
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace webvimark\helpers;
+namespace uzzielpelawak\helpers;
 
 
 /**
  * A lot of useful and useless stuff
  * 
  * Class LittleBigHelper
- * @package webvimark\helpers
+ * @package uzzielpelawak\helpers
  */
 class LittleBigHelper 
 {

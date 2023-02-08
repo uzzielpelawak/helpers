@@ -1,11 +1,11 @@
 <?php
-namespace webvimark\helpers;
+namespace uzzielpelawak\helpers;
 use yii\db\Query;
 
 /**
  * Class ManyManyUpdater
  *
- * @package webvimark\helpers
+ * @package uzzielpelawak\helpers
  */
 class ManyManyUpdater
 {
